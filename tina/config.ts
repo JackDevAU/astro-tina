@@ -7,14 +7,15 @@ const branch =
   process.env.HEAD ||
   'main';
 
+const localContentPath = process.env.LOCAL_CONTENT_RELATIVE_PATH ?? undefined;
+
 export default defineConfig({
   branch,
-
   // Get this from tina.io
   clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID,
   // Get this from tina.io
   token: process.env.TINA_TOKEN,
-
+  localContentPath,
   build: {
     outputFolder: 'admin',
     publicFolder: 'public',
